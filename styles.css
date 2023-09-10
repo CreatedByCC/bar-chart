@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  color: black;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: rgb(70, 103, 134);
+  height: 100%;
+}
+.content-wrapper {
+  background-color: rgb(255, 255, 255);
+  padding: 3rem;
+  box-shadow: 0 0 0.7rem 1rem rgba(0, 0, 0, 0.4);
+}
+.content-wrapper h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.bar {
+  fill: rgb(255, 165, 0);
+}
+.bar:hover {
+  fill: rgb(255, 255, 255);
+}
+#tooltip {
+  position: absolute;
+  padding: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: rgb(70, 103, 134);
+}
+#info-link {
+  text-align: right;
+  font-size: 0.8rem;
+}
