@@ -1,5 +1,3 @@
-import * as d3 from "d3";
-
 // variables
 const api_url = 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json';
 let dataset = [];
@@ -14,13 +12,6 @@ const drawGraph = () => {
   const svg = d3.select('#chart')
     .attr('width', width)
     .attr('height', height)
-  
-  svg.append('text')    // y-axis header
-    .attr('transform', 'rotate(-90)')
-    .attr('x', -200)
-    .attr('y', 70)
-    .text('Gross Domestic Product')
-    .style('font-size', '0.7rem');
   
   // draw scales
   const xScale = d3.scaleLinear()
@@ -61,11 +52,11 @@ const drawGraph = () => {
   
   // draw axis scale
   const datesArr = dataset.map((d) => {
-    return new Date(d[0]);
+    return new Date(d[0]);  // set the date to a standard time format that we can sort
   })
   //console.log(datesArr);
   
-  const xAxisScale = d3.scaleTime()
+  const xAxisScale = d3.scaleTime() // since we are working with time
     .domain([d3.min(datesArr), d3.max(datesArr)])
     .range([padding, width - padding]);
   
@@ -86,6 +77,14 @@ const drawGraph = () => {
     .attr('id', 'y-axis')
     .attr('transform', `translate(${padding}, 0)`)
     .call(yAxis);
+
+  // y-axis header
+  svg.append('text')    
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -200)
+    .attr('y', 70)
+    .text('Gross Domestic Product')
+    .style('font-size', '0.7rem');
 
 };
 
