@@ -1,3 +1,5 @@
+import * as d3 from "https://cdn.skypack.dev/d3@7.8.4";
+
 // variables
 const api_url = 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json';
 let dataset = [];
